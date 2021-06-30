@@ -154,6 +154,7 @@ void segmentation::cloud_cb (const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 
 
   //printf("%i\n",xyzCloudPtrFiltered->size());
+  ////
 
 
   //printf("%i\n",xyzCloudPtrRansacFiltered->size());
