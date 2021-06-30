@@ -2,6 +2,7 @@
   <!--Include description and control launch files-->
   <include file="$(find obj_recognition)/launch/robot_description.launch"/>
   <include file="$(find obj_recognition)/launch/robot_control.launch"/>
+  <!--<include file="$(find obj_recognition)/launch/robot_perception.launch"/>-->
 
   <!--Launch a gazebo world-->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -28,5 +29,10 @@
   <!-- launch rviz-->
   <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false"
     output="screen" args="-d $(find obj_recognition)/config/perception.rviz"/>
+
+
+  <!-- Static Transforms for Testing-->
+  <node pkg="tf" type="static_transform_publisher" name="camera_link1" args="1 0 0 0 0 0 1 world camera_link 100" />
+  <node pkg="tf" type="static_transform_publisher" name="camera_link2" args="1 0 0 0 0 0 1 world link_2 100" />
 
 </launch>
